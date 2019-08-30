@@ -29,8 +29,7 @@ class Solution:
                     visited_cells.add(cell)
                     if word_idx == word_len - 1:
                         return True
-                    forms_word = form_word(*cell, word_idx + 1)
-                    if forms_word:
+                    if form_word(*cell, word_idx + 1):
                         return True
                     visited_cells.remove(cell)
             return False
@@ -43,7 +42,6 @@ class Solution:
                     return True
                 visited_cells = set()
                 visited_cells.add((i, j))
-                forms_word = form_word(i, j, 1)
-                if forms_word:
+                if form_word(i, j, 1):
                     return True
         return False
